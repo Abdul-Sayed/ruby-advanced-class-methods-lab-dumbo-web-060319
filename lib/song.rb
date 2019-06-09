@@ -1,4 +1,5 @@
-lass Song
+
+class Song
   attr_accessor :name, :artist_name
 
   @@all = []
@@ -27,3 +28,5 @@ lass Song
     self.new(name)
   end
 end
+
+p Song.new_by_name("Modanna")
