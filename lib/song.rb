@@ -1,11 +1,19 @@
-
-class Song
+lass Song
   attr_accessor :name, :artist_name
 
   @@all = []
 
+  def initialize(name)
+    @name = name
+  end
+
   def self.all
     @@all
+  end
+
+  def save
+    #Places a Song instance object into @@all
+    self.class.all << self
   end
 
   def self.create
@@ -15,8 +23,7 @@ class Song
     return song
   end
 
-  def save
-    #Places a Song instance object into @@all
-    self.class.all << self
+  def self.new_by_name(name)
+    self.new(name)
   end
 end
