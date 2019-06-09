@@ -1,3 +1,4 @@
+
 class Song
   attr_accessor :name, :artist_name
 
@@ -8,8 +9,10 @@ class Song
   end
 
   def self.create
-    #Initialize a song object and save it to @@all through Song.all
-    self.all << self.new
+    #instantiates and saves the song, and it returns the new song that was created
+    song = self.new
+    self.all << song
+    return song
   end
 
   def save
